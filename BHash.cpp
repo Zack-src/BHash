@@ -5,7 +5,7 @@ int Tableau(int Text, int pos) {
 
 	for (int i = 0; i < Text; i++)
 		for (int j = 0; j < 10; j++)
-			table[j] = table[j] + (i * (pos + 4));
+			table[j] += i * (pos + 4);
 			
 	return table[Text % 10];
 }
