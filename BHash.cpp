@@ -1,7 +1,7 @@
 #include <iostream>
 
 int Tableau(int Text, int pos) {
-	int table[10] = {0,1,2,3,4,5,6,7,8,9};
+	int table[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
 	for (int i = 0; i < Text; i++) {
 		for (int j = 0; j < 10; j++) {
@@ -16,7 +16,7 @@ int BHash(std::string Text) {
 
 	for (int i = 0; i < Text.length(); i++)
 	{
-		TextDecimal = (int)Text[i];
+		TextDecimal = (int) Text[i];
 		Result += Tableau(TextDecimal, i);
 	}
 	return Result;
