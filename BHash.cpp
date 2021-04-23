@@ -24,7 +24,7 @@ int BHash(std::string Text) {
 
 int main(int argc, char* argv[])
 {
-	std::cout << BHash(argv[1]);
+	printf(BHash(argv[1]));
 	
 	return 0;
 }
