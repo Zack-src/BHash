@@ -1,28 +1,28 @@
 #include <iostream>
+#include <string>
 
-int Tableau(int Text, int pos) {
-	int table[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+int Tableau(int Text, int pos) 
+{
+	uint64_t table[10] = { 0,1,2,3,4,5,6,7,8,9 }; // array
 
 	for (int i = 0; i < Text; i++)
-		for (int j = 0; j < 10; j++)
-			table[j] += i * (pos + 4);
-			
+		for (uint64_t& j : table)
+			for (int t = 0; t < 512; t++)
+				j += i * (pos + 4);
+
 	return table[Text % 10];
 }
 
 int BHash(std::string Text) {
 
-	int TextDecimal, Result = 0;
-
+	int Result = 0;
 	for (int i = 0; i < Text.length(); i++)
-	{
-		TextDecimal = (int) Text[i];
-		Result += Tableau(TextDecimal, i);
-	}
+		Result += Tableau((int)Text[i], i);
+
 	return Result;
 }
 
-int main(int argc, char* argv[])
+int main(int argc, char* argv[]) 
 {
 	printf("%i\n", BHash(argv[1]));
 	return 0;
