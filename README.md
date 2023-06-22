@@ -1,2 +1,2 @@
 # BHash
-Simple Programme de Hash
+Simple Hash
